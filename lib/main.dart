@@ -7,6 +7,7 @@ import 'package:tele_flicks/src/common/core/di/di_service.dart' as di;
 import 'package:path_provider/path_provider.dart';
 
 Future<void> main() async {
+  
   WidgetsFlutterBinding.ensureInitialized();
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: kIsWeb
