@@ -8,6 +8,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:tele_flicks/src/common/core/di/api_setups.dart';
 import 'package:tele_flicks/src/common/core/interceptors/auth_interceptor.dart';
 import 'package:tele_flicks/src/common/data/repositories/secure_storage_repository.dart';
+import 'package:tele_flicks/src/features/live_tv/live_tv_menu/data/live_tv_menu_repository.dart';
 import 'package:tele_flicks/src/features/settings/theme/data/theme_repository.dart';
 
 import '../../../features/login/data/login_repository.dart';
@@ -45,4 +46,7 @@ Future<void> setup() async {
         secureStorage: getIt<SecureStorageRepository>(),
       ));
 
+  getIt.registerLazySingleton<LiveTvMenuRepository>(() => LiveTvMenuRepository(
+        playerApi: getIt<PlayerApi>(),
+      ));
 }

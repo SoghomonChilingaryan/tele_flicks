@@ -13,9 +13,9 @@ class AppProgressBloc extends Bloc<AppProgressEvent, AppProgressState> {
   }
 }
 
-abstract class ProgressState {
-  bool get inProgress;
-}
+// abstract class ProgressState {
+//   bool get inProgress;
+// }
 
 abstract class AppProgressEvent {}
 
@@ -25,8 +25,7 @@ class AppProgressChangeProgressEvent extends AppProgressEvent {
   AppProgressChangeProgressEvent(this.inProgress);
 }
 
-class AppProgressState extends Equatable implements ProgressState {
-  @override
+class AppProgressState extends Equatable {
   final bool inProgress;
   AppProgressState({
     this.inProgress = false,

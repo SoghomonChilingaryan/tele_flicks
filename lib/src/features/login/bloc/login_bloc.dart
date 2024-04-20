@@ -45,7 +45,7 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
         password: event.password,
       );
       if (isAuthenticated) {
-        _repository.changeLocalUserData(
+        await _repository.changeLocalUserData(
             userName: event.userName, password: event.password);
         _userStateBloc.add(UserStateLoginEvent());
       } else {

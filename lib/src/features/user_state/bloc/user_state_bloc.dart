@@ -31,7 +31,7 @@ class UserStateBloc extends Bloc<UserStateEvent, UserStateState> {
   FutureOr _logOut(
       UserStateLogOutEvent event, Emitter<UserStateState> emit) async {
     _authInterceptor.deleteCredentials();
-    await _secureStorage.deleteUserData();
+    // await _secureStorage.deleteUserData();
     emit(UserUnAuthorizedState());
   }
 }

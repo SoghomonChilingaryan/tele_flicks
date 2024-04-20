@@ -17,7 +17,7 @@ class AuthInterceptor extends Interceptor {
 
   @override
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    if (_username.isEmpty && _password.isNotEmpty) {
+    if (_username.isNotEmpty && _password.isNotEmpty) {
       options.queryParameters.addAll({
         'username': _username,
         'password': _password,

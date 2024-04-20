@@ -17,7 +17,7 @@ class ProgressWidget extends StatefulWidget {
   _ProgressWidgetState createState() => _ProgressWidgetState();
 }
 
-class _ProgressWidgetState<C extends BlocBase<S>, S extends ProgressState>
+class _ProgressWidgetState
     extends State<ProgressWidget> with TickerProviderStateMixin {
   OverlayEntry? progressOverlayEntry;
   late AnimationController _animationController;
