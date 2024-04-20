@@ -1,0 +1,25 @@
+name: player_api
+description: "player_api"
+version: 0.0.1
+homepage:
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+  flutter: ">=1.17.0"
+
+dependencies:
+  dio: ^5.4.3+1
+  flutter:
+    sdk: flutter
+  retrofit: ^4.1.0
+  json_annotation: ^4.8.1
+  retrofit_generator: ^8.1.0
+
+dev_dependencies:
+  build_runner:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.2
+  json_serializable: ^6.7.1
+
+flutter:

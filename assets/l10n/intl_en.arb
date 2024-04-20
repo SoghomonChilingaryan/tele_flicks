@@ -1,1 +1,10 @@
-{}
+{
+  "teleFlicks": "TeleFlicks",
+  "username": "Username",
+  "password": "Password",
+  "login": "LOGIN",
+  "logout": "LOGOUT",
+  "liveTv": "LIVE TV",
+  "movies": "MOVIES",
+  "incorrectLogin": "incorrect username or password"
+}

@@ -58,16 +58,17 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
   }
 
   static ThemeData _initialTheme(ThemeRepository repository) {
-    final isDarkTheme = repository.isDarkTheme();
+    // final isDarkTheme = repository.isDarkTheme();
     final repoColor = repository.getPrimaryColor();
     final color = repoColor != null ? Color(repoColor) : null;
-
-    return isDarkTheme
-        ? AppTheme.darkTheme.copyWith(
-            colorScheme:
-                AppTheme.darkTheme.colorScheme.copyWith(primary: color))
-        : AppTheme.lightTheme.copyWith(
-            colorScheme:
-                AppTheme.lightTheme.colorScheme.copyWith(primary: color));
+    return AppTheme.darkTheme.copyWith(
+        colorScheme: AppTheme.darkTheme.colorScheme.copyWith(primary: color));
+    // return isDarkTheme
+    //     ? AppTheme.darkTheme.copyWith(
+    //         colorScheme:
+    //             AppTheme.darkTheme.colorScheme.copyWith(primary: color))
+    //     : AppTheme.lightTheme.copyWith(
+    //         colorScheme:
+    //             AppTheme.lightTheme.colorScheme.copyWith(primary: color));
   }
 }

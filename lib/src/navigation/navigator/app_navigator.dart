@@ -1,5 +1,29 @@
 
-export 'app_navigator_default.dart'
-    if (dart.library.html) 'app_navigator_web.dart';
+import 'package:flutter/widgets.dart';
+import 'package:go_router/go_router.dart';
 
+class AppNavigator {
+  final GlobalKey<NavigatorState> _navigatorKey;
+  AppNavigator(this._navigatorKey);
 
+  void go(String route, {Object? extra}) {
+    _navigatorKey.currentContext!.go(route, extra: extra);
+  }
+
+  void goNamed(String routeName, {Object? args}) {
+    _navigatorKey.currentContext!.goNamed(routeName, extra: args);
+  }
+
+  void pushNamed(String routeName,
+      {Object? args, Map<String, dynamic> queryParameters = const {}}) {
+    _navigatorKey.currentContext!.pushNamed(routeName, extra: args);
+  }
+
+  void replaceNamed(String route, {Object? extra}) {
+    _navigatorKey.currentContext!.replaceNamed(route, extra: extra);
+  }
+
+  void pop<T extends Object?>([T? result]) {
+    _navigatorKey.currentContext!.pop<T>(result);
+  }
+}

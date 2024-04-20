@@ -49,6 +49,86 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+
+  /// `TeleFlicks`
+  String get teleFlicks {
+    return Intl.message(
+      'TeleFlicks',
+      name: 'teleFlicks',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Username`
+  String get username {
+    return Intl.message(
+      'Username',
+      name: 'username',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message(
+      'Password',
+      name: 'password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LOGIN`
+  String get login {
+    return Intl.message(
+      'LOGIN',
+      name: 'login',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LOGOUT`
+  String get logout {
+    return Intl.message(
+      'LOGOUT',
+      name: 'logout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `LIVE TV`
+  String get liveTv {
+    return Intl.message(
+      'LIVE TV',
+      name: 'liveTv',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `MOVIES`
+  String get movies {
+    return Intl.message(
+      'MOVIES',
+      name: 'movies',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `incorrect username or password`
+  String get incorrectLogin {
+    return Intl.message(
+      'incorrect username or password',
+      name: 'incorrectLogin',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

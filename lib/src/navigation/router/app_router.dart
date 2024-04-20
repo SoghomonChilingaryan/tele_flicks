@@ -2,6 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:tele_flicks/src/features/live_tv/screens/live_tv_screen.dart';
+import 'package:tele_flicks/src/features/menu/screens/menu_screens.dart';
+import 'package:tele_flicks/src/features/movies/screens/movies_screen.dart';
 
 class AppRouter {
   static final navigatorKey = GlobalKey<NavigatorState>();
@@ -12,12 +15,14 @@ class AppRouter {
 
   static const appRout = '/';
 
-  static const faq = 'faq';
+  static const menu = 'menu';
 
-  static const contact = 'contact';
+  static const liveTv = 'live_tv';
+
+  static const movies = 'movies';
 
   final GoRouter _router = GoRouter(
-    initialLocation: appRout,
+    initialLocation: '$appRout$menu',
     navigatorKey: navigatorKey,
     debugLogDiagnostics: true,
     // redirect: (context, state) {
@@ -28,17 +33,26 @@ class AppRouter {
       GoRoute(
         name: appRout,
         path: appRout,
-        // builder: (context, state) {
-        //   return const HomeScreen();
-        // },
         redirect: (context, state) => null,
         routes: [
-          // GoRoute(
-          //     name: faq,
-          //     path: faq,
-          //     pageBuilder: (context, state) {
-          //       return buildPageForPlatform(context, state, const FaqScreen());
-          //     })
+          GoRoute(
+              name: menu,
+              path: menu,
+              builder: (context, state) {
+                return const MenuScreen();
+              }),
+          GoRoute(
+              name: liveTv,
+              path: liveTv,
+              builder: (context, state) {
+                return const LiveTvScreen();
+              }),
+          GoRoute(
+              name: movies,
+              path: movies,
+              builder: (context, state) {
+                return const MoviesScreen();
+              })
         ],
       ),
     ],

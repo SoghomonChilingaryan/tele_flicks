@@ -13,4 +13,13 @@ extension BuildContextExt on BuildContext {
 
   NavigatorState get navigator => Navigator.of(this);
 
+  Color get primaryColor =>Theme.of(this).colorScheme.primary;
+
+  void hideKeyboard() {
+    final focusNode = FocusScope.of(this);
+    if (!focusNode.hasPrimaryFocus) {
+      focusNode.unfocus();
+    }
+  }
+
 }

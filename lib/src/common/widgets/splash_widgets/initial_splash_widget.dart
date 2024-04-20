@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tele_flicks/src/common/extinction/build_context.dart';
 import 'package:tele_flicks/src/common/res/app_assets.dart';
+import 'package:tele_flicks/src/common/res/app_colors.dart';
 
 const double _circleSize = 250;
 
@@ -29,7 +29,7 @@ class _SplashWidgetState extends State<SplashWidget>
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: context.theme.scaffoldBackgroundColor,
+      color: AppColors.darkBackground,
       alignment: Alignment.center,
       child: FadeTransition(
         opacity: _animation,
@@ -43,13 +43,16 @@ class _SplashWidgetState extends State<SplashWidget>
                   width: _circleSize,
                   height: _circleSize,
                   decoration: BoxDecoration(
-                    color: context.theme.scaffoldBackgroundColor,
+                    color: AppColors.darkBackground,
                     borderRadius: BorderRadius.circular(_circleSize / 2),
                   ),
-                  child: const CircularProgressIndicator(strokeWidth: 2),
+                  child: const CircularProgressIndicator(
+                    strokeWidth: 2,
+                    color:  AppColors.darkPrimary,
+                  ),
                 ),
                 Image.asset(
-                  AppAssets.fireRed,
+                  AppAssets.teleFlicksLogo,
                   width: _circleSize,
                   height: _circleSize,
                 )
