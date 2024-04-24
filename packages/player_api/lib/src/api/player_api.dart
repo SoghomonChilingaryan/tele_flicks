@@ -33,6 +33,12 @@ abstract class PlayerApi {
     @Query('category_id') required String categoryId,
   });
 
+  @GET('/player_api.php')
+  Future<ShortEpgResponse> getShortEpg({
+    @Query('action') String action = 'get_short_epg',
+    @Query('stream_id') required int streamId,
+  });
+
 // // VodCategories
 //   @GET('/player_api.php')
 //   Future<List<LiveCategoriesResponse>> getVodCategories({
@@ -66,6 +72,4 @@ abstract class PlayerApi {
 //     @Query('action') String action = 'get_series',
 //     @Query('category_id') required String categoryId,
 //   });
-
-
 }

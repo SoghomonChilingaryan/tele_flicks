@@ -124,16 +124,16 @@ class _MCTextFieldState extends State<MCTextField> {
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
             borderRadius: borderRadius,
-            borderSide: BorderSide(color: AppColors.textBlack)),
+            borderSide: BorderSide(color: AppColors.primaryText)),
         focusedBorder: OutlineInputBorder(
             borderRadius: borderRadius,
-            borderSide: BorderSide(color: AppColors.textBlack)),
+            borderSide: BorderSide(color: AppColors.primaryText)),
         border: OutlineInputBorder(
             borderRadius: borderRadius,
-            borderSide: BorderSide(color: AppColors.textBlack)),
+            borderSide: BorderSide(color: AppColors.primaryText)),
         errorBorder: OutlineInputBorder(
             borderRadius: borderRadius,
-            borderSide: BorderSide(color: AppColors.textBlack)),
+            borderSide: BorderSide(color: AppColors.primaryText)),
         hintText: widget.hint,
         labelText: widget.labelText,
         errorText: widget.errorText,
@@ -155,7 +155,7 @@ class _MCTextFieldState extends State<MCTextField> {
         // errorText: widget.showErrorText ? widget.error : null,
         // labelText: widget.labelText,
       ),
-    
+
       // controller: widget.controller,
       onChanged: widget.onChanged,
       // onSubmitted: widget.onSubmitted,

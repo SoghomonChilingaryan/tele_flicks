@@ -7,10 +7,17 @@ sealed class LiveTvMenuEvent extends Equatable {
   List<Object> get props => [];
 }
 
-final class LiveTvMenuGetLiveCategoriesEvent extends LiveTvMenuEvent{}
-final class LiveTvMenuOnCategoryPressEvent extends LiveTvMenuEvent{
+// final class LiveTvMenuGetLiveCategoriesEvent extends LiveTvMenuEvent{}
+final class LiveTvMenuCreateInitialStateEvent extends LiveTvMenuEvent {}
+
+final class LiveTvMenuOnCategoryPressEvent extends LiveTvMenuEvent {
   final String categoryId;
 
   LiveTvMenuOnCategoryPressEvent(this.categoryId);
+}
 
+class LiveTvMenuOnLiveStreamPressEvent extends LiveTvMenuEvent {
+  final int streamId;
+
+  LiveTvMenuOnLiveStreamPressEvent(this.streamId);
 }

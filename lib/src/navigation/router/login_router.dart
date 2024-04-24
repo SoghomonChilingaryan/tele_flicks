@@ -35,7 +35,7 @@ class LoginRouter {
         ],
       ),
     ],
-    // errorPageBuilder: (context, stfaqate) => buildPageForPlatform(
+    // errorPageBuilder: (context, state) => buildPageForPlatform(
     //     context, state, kIsWeb ? const Error404Screen() : const ErrorScreen()),
   );
 }

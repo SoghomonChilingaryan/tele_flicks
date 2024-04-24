@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:tele_flicks/src/features/live_tv/live_tv_menu/screen/live_tv_screen.dart';
+import 'package:tele_flicks/src/features/live_tv/live_tv_menu/screen/live_tv_menu_screen.dart';
 import 'package:tele_flicks/src/features/menu/screens/menu_screens.dart';
 import 'package:tele_flicks/src/features/movies/screens/movies_screen.dart';
 
@@ -22,7 +22,7 @@ class AppRouter {
   static const movies = 'movies';
 
   final GoRouter _router = GoRouter(
-    initialLocation: '$appRout$liveTv',
+    initialLocation: '$appRout$menu',
     navigatorKey: navigatorKey,
     debugLogDiagnostics: true,
     // redirect: (context, state) {
@@ -56,7 +56,7 @@ class AppRouter {
         ],
       ),
     ],
-    // errorPageBuilder: (context, stfaqate) => buildPageForPlatform(
+    // errorPageBuilder: (context, state) => buildPageForPlatform(
     //     context, state, kIsWeb ? const Error404Screen() : const ErrorScreen()),
   );
 }

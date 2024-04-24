@@ -7,7 +7,8 @@
         {
             "name": "tele_flicks",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "lib/main.dart",
         },
         {
             "name": "tele_flicks (profile mode)",
@@ -23,4 +24,3 @@
         }
     ]
 }
-
