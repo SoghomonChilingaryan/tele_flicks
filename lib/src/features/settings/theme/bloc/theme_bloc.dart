@@ -62,7 +62,9 @@ class ThemeBloc extends Bloc<ThemeEvent, ThemeData> {
     final repoColor = repository.getPrimaryColor();
     final color = repoColor != null ? Color(repoColor) : null;
     return AppTheme.darkTheme.copyWith(
-        colorScheme: AppTheme.darkTheme.colorScheme.copyWith(primary: color));
+      colorScheme: AppTheme.darkTheme.colorScheme.copyWith(primary: color),
+      // platform: TargetPlatform.iOS,
+    );
     // return isDarkTheme
     //     ? AppTheme.darkTheme.copyWith(
     //         colorScheme:

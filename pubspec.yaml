@@ -21,6 +21,7 @@ dependencies:
   #c
   cupertino_icons: ^1.0.8
   cached_network_image: ^3.3.1
+  chewie: ^1.8.1
   
   #d
   dio: ^5.4.3+1
@@ -31,9 +32,10 @@ dependencies:
   #f
   flutter_bloc: ^8.1.5
   flutter_localization: ^0.2.0
+  flutter_secure_storage: ^9.0.0
   
   #g
-  go_router: ^13.2.4
+  go_router: ^14.0.1
   get_it: ^7.7.0
 
   #h
@@ -57,11 +59,12 @@ dependencies:
   #r
   #s
   shared_preferences: ^2.2.3
-  flutter_secure_storage: ^9.0.0
   
   #t
   #u
   #v
+  video_player: ^2.8.6
+
   #w
   web: ^0.5.1
   #x

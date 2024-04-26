@@ -45,7 +45,7 @@ class AppRouter {
               name: liveTv,
               path: liveTv,
               builder: (context, state) {
-                return const LiveTvMenuScreen();
+                return const LiveTvScreen();
               }),
           GoRoute(
               name: movies,

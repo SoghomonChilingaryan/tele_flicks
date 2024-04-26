@@ -1,7 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tele_flicks/src/common/extinction/build_context.dart';
+import 'package:tele_flicks/src/common/res/app_colors.dart';
 import 'package:tele_flicks/src/features/live_tv/live_tv_menu/bloc/live_tv_menu_bloc.dart';
 import 'package:tele_flicks/src/features/live_tv/live_tv_menu/domain/live_categories.dart';
 
@@ -30,14 +30,12 @@ class CategoryWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
+              color: AppColors.shadowGrey.withOpacity(0.5),
               blurRadius: 3,
               offset: const Offset(-2, -2),
             ),
             BoxShadow(
               color: Colors.black.withOpacity(0.5),
-              // color: Colors.grey.withOpacity(0.5),
-
               blurRadius: 3,
               offset: const Offset(2, 2),
             ),

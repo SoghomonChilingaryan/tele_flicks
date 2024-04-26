@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 abstract class AppColors {
+  static const primary = Color(0xF8C26216);
   static const lightPrimary = Color(0xF8C26216);
   static const darkPrimary = Color(0xF8C26216);
 
@@ -16,4 +17,10 @@ abstract class AppColors {
 
   static const shadowWight = Colors.white;
   static final shadowDark = Colors.white.withOpacity(0.1);
+
+  static const bufferedColor = Color(0xFF707070);
+
+  static const shadowGrey = Color(0xFF424242);
+
 }
+

@@ -8,16 +8,17 @@ import 'package:tele_flicks/src/features/live_tv/live_tv_menu/widgets/live_strea
 import 'package:tele_flicks/src/features/live_tv/live_tv_player/bloc/live_tv_player_bloc.dart';
 import 'package:tele_flicks/src/features/live_tv/live_tv_player/screen/live_tv_player_widget.dart';
 
-class LiveTvMenuScreen extends StatefulWidget {
-  const LiveTvMenuScreen({super.key});
+class LiveTvScreen extends StatefulWidget {
+  const LiveTvScreen({super.key});
 
   @override
-  State<LiveTvMenuScreen> createState() => _LiveTvMenuScreenState();
+  State<LiveTvScreen> createState() => _LiveTvScreenState();
 }
 
-class _LiveTvMenuScreenState extends State<LiveTvMenuScreen> {
+class _LiveTvScreenState extends State<LiveTvScreen> {
   late final LiveTvPlayerBloc _liveTvPlayerBloc;
   late final LiveTvMenuBloc _liveTvMenuBloc;
+
   @override
   void initState() {
     _liveTvPlayerBloc = LiveTvPlayerBloc();
@@ -43,51 +44,65 @@ class _LiveTvMenuScreenState extends State<LiveTvMenuScreen> {
       child: Scaffold(
         body: SafeArea(
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
               LiveTvPlayerWidget(),
-              SizedBox(height: 20),
-              BlocBuilder<LiveTvMenuBloc, LiveTvMenuState>(
-                buildWhen: (p, c) =>
-                    c.category != p.category ||
-                    c.currantCategoryId != p.currantCategoryId,
-                builder: (context, state) {
-                  return Align(
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: state.category
-                            .map((e) => CategoryWidget(
-                                  categories: e,
-                                  isChosen:
-                                      e.categoryId == state.currantCategoryId,
-                                ))
-                            .toList(),
-                      ),
-                    ),
-                  );
-                },
-              ),
-              SizedBox(height: 20),
-              Expanded(
-                child: BlocBuilder<LiveTvMenuBloc, LiveTvMenuState>(
-                  buildWhen: (p, c) => c.liveStreams != p.liveStreams,
-                  builder: (context, state) {
-                    return ListView.builder(
-                      itemCount: state.liveStreams.length,
-                      itemBuilder: (context, index) {
-                        final liveStream = state.liveStreams[index];
-                        return LiveStreamWidget(
-                          liveStream: liveStream,
-                        );
-                      },
-                    );
-                  },
-                ),
-              ),
+              _LiveTvMenuWidget(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _LiveTvMenuWidget extends StatelessWidget {
+  const _LiveTvMenuWidget();
+
+  @override
+  Widget build(BuildContext context) {
+    return Flexible(
+      child: Column(
+        children: [
+          BlocBuilder<LiveTvMenuBloc, LiveTvMenuState>(
+            buildWhen: (p, c) =>
+                c.category != p.category ||
+                c.currantCategoryId != p.currantCategoryId,
+            builder: (context, state) {
+              return Align(
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: state.category
+                        .map((e) => CategoryWidget(
+                              categories: e,
+                              isChosen: e.categoryId == state.currantCategoryId,
+                            ))
+                        .toList(),
+                  ),
+                ),
+              );
+            },
+          ),
+          SizedBox(height: 20),
+          Expanded(
+            child: BlocBuilder<LiveTvMenuBloc, LiveTvMenuState>(
+              buildWhen: (p, c) => c.liveStreams != p.liveStreams,
+              builder: (context, state) {
+                return ListView.builder(
+                  itemCount: state.liveStreams.length,
+                  itemBuilder: (context, index) {
+                    final liveStream = state.liveStreams[index];
+                    return LiveStreamWidget(
+                      liveStream: liveStream,
+                    );
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
     );
   }

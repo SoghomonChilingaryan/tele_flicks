@@ -63,6 +63,8 @@ class LiveTvMenuBloc extends Bloc<LiveTvMenuEvent, LiveTvMenuState> {
           liveStreams: liveStreams,
           currantCategoryId: event.categoryId,
         ));
+        _liveTvPlayerBloc.add(LiveTvPlayerAddEvent(
+            'https://assets.mixkit.co/videos/preview/mixkit-daytime-city-traffic-aerial-view-56-large.mp4'));
       }
     } catch (e) {
       log('ERROR _onCategoryPress $e');
@@ -72,8 +74,10 @@ class LiveTvMenuBloc extends Bloc<LiveTvMenuEvent, LiveTvMenuState> {
 
   FutureOr<void> _onLiveStreamPress(LiveTvMenuOnLiveStreamPressEvent event,
       Emitter<LiveTvMenuState> emit) async {
-    final shortEpg = await _repository.getShortEpg(
-      streamId: event.streamId,
-    );
+    _liveTvPlayerBloc.add(LiveTvPlayerAddEvent(
+        'https://assets.mixkit.co/videos/preview/mixkit-spinning-around-the-earth-29351-large.mp4'));
+    // final shortEpg = await _repository.getShortEpg(
+    //   streamId: event.streamId,
+    // );
   }
 }

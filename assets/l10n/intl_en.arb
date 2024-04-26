@@ -6,5 +6,6 @@
   "logout": "LOGOUT",
   "liveTv": "LIVE TV",
   "movies": "MOVIES",
-  "incorrectLogin": "incorrect username or password"
+  "incorrectLogin": "incorrect username or password",
+  "loading": "Loading"
 }

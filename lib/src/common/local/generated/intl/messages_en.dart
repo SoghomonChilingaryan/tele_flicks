@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "incorrectLogin": MessageLookupByLibrary.simpleMessage(
             "incorrect username or password"),
         "liveTv": MessageLookupByLibrary.simpleMessage("LIVE TV"),
+        "loading": MessageLookupByLibrary.simpleMessage("Loading"),
         "login": MessageLookupByLibrary.simpleMessage("LOGIN"),
         "logout": MessageLookupByLibrary.simpleMessage("LOGOUT"),
         "movies": MessageLookupByLibrary.simpleMessage("MOVIES"),

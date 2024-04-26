@@ -6,3 +6,9 @@ sealed class LiveTvPlayerEvent extends Equatable {
   @override
   List<Object> get props => [];
 }
+
+class LiveTvPlayerAddEvent extends LiveTvPlayerEvent {
+  final String url;
+
+  LiveTvPlayerAddEvent(this.url);
+}
